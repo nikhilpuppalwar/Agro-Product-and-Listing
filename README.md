@@ -22,16 +22,21 @@ Agri Mart is a mobile app that helps farmers list and sell agricultural products
 ## 📲 Screenshots  
 
 ### **Welcome & Listing Screens**  
-![Welcome Screen](https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/welcome.jpg)  
-![Listing Screen](https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/listing.jpg)  
+<p align="center">
+  <img src="https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/welcome.jpg" width="250">
+  <img src="https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/listing.jpg" width="250">
+</p>
 
 ### **Login & Register Screens**  
-| Register | Login |
-|----------|-------|
-| ![Register](https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/registor.jpg) | ![Login](https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/login.jpg) |  
+<p align="center">
+  <img src="https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/login%20main.jpg" width="250">
+  <img src="https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/login.jpg" width="250">
+</p>
 
 ### **Main App Screens**  
-| Home | Cart | Profile | Detail Page |
-|------|------|--------|-------------|
-| ![Home](https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/home.jpg) | ![Cart](https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/cart.jpg) | ![Profile](https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/profile.jpg) | ![Detail](https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/deatil.jpg) |
-
+<p align="center">
+  <img src="https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/home.jpg" width="200">
+  <img src="https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/cart.jpg" width="200">
+  <img src="https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/profile.jpg" width="200">
+  <img src="https://raw.githubusercontent.com/nikhilpuppalwar/images/main/argo%20mart/detail.jpg" width="200">
+</p>
