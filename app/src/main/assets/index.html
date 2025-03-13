@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgroMart - Fresh Produce</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        /* Header Styling */
+        header {
+            background-color: #28a745;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+        .nav-links li {
+            display: inline;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+            font-weight: 500;
+            transition: 0.3s;
+            padding: 5px 15px;
+            border-radius: 5px;
+        }
+        .nav-links a:hover {
+            background-color: white;
+            color: #28a745;
+        }
+        .search-bar input {
+            padding: 10px;
+            width: 280px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            outline: none;
+        }
+        .search-bar button {
+            padding: 8px 12px;
+            border: none;
+            background-color: white;
+            color: #28a745;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 5px;
+        }
+        .cart {
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            cursor: pointer;
+            position: relative;
+            background-color: white;
+            color: #28a745;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        .cart span {
+            background-color: red;
+            color: white;
+            padding: 6px 10px;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-left: 8px;
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            font-size: 14px;
+        }
+        .login-btn {
+            background-color: white;
+            color: #28a745;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .login-btn:hover {
+            background-color: #ddd;
+        }
+        .hero {
+            background: url('https://source.unsplash.com/1600x600/?farm,vegetables') no-repeat center;
+            background-size: cover;
+            text-align: center;
+            padding: 80px 20px;
+            color: white;
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+        }
+        .product-section {
+            padding: 40px 10%;
+            text-align: center;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        .product {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: 0.3s;
+            text-align: center;
+        }
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .product img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .product button {
+            margin-top: 10px;
+            padding: 12px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .product button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header>
+    <div class="logo">AgroMart</div>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Deals</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <div class="search-bar">
+        <input type="text" placeholder="Search for products...">
+        <button>🔍</button>
+    </div>
+    <div class="cart">
+        🛒 Cart <span id="cart-count">0</span>
+    </div>
+    <button class="login-btn">Login / Signup</button>
+</header>
+
+<!-- Hero Section -->
+<div class="hero">Fresh Organic Products at Your Doorstep</div>
+<section class="product-section">
+    <h2>Vegetables</h2>
+    <div class="product-grid">
+        <div class="product"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Tomato_je.jpg/1200px-Tomato_je.jpg" alt="Tomato"><h3>Tomato</h3><p>&#8377; 40.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://m.media-amazon.com/images/I/41QKCkQ2A5L.jpg" alt="Potato"><h3>Potato</h3><p>&#8377; 30.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://organicmandya.com/cdn/shop/files/Brinjal.jpg" alt="Brinjal"><h3>Brinjal</h3><p>&#8377; 35.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://m.media-amazon.com/images/I/51DJ-9xkuQL.AC_UF1000,1000_QL80.jpg" alt="Onion"><h3>Onion</h3><p>&#8377; 45.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://www.skorganicfarms.com/cdn/shop/products/carrot_red_long1_900x.jpg" alt="Carrot"><h3>Carrot</h3><p>&#8377; 50.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://i0.wp.com/post.healthline.com/wp-content/uploads/2019/05/spinach-1296x728-header.jpg?w=1155&h=1528" alt="Spinach"><h3>Spinach</h3><p>&#8377; 60.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://www.veggovilla.com/img/productimg/cabbage_0_5-240.webp" alt="Cabbage"><h3>Cabbage</h3><p>&#8377; 35.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://5.imimg.com/data5/SELLER/Default/2021/5/YV/CN/NT/125276213/cabbage-flower.jpg" alt="Flower Cabbage"><h3>Flower Cabbage</h3><p>&#8377; 40.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://i0.wp.com/naveenvegetable.com/wp-content/uploads/2020/02/img_20190504_085138-92178942-1584540037955-1024x576.jpg?ssl=1" alt="Garlic"><h3>Garlic</h3><p>&#8377; 70.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product">
+            <img src="http://gogarden.co.in/cdn/shop/files/Go-Garden-coriander-seeds_3ef90ed7-8019-4438-bccd-e809786f29ce.jpg?v=1687001828" alt="Coriander">
+            <h3>Coriander</h3>
+            <p>&#8377; 30.0 / bunch</p>
+            <button>Add to Cart</button>
+
+        </div>
+    </div>
+
+    <h2>Fruits</h2>
+    <div class="product-grid">
+        <div class="product">
+            <img src="https://organicmandya.com/cdn/shop/files/BananaPachabale.jpg?v=1721369894&width=1000" alt="Banana">
+            <h3>Banana</h3>
+            <p>&#8377; 50.0 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://livekarts.in/wp-content/uploads/2021/05/mango.jpg" alt="Mango">
+            <h3>Mango</h3>
+            <p>&#8377; 80.0 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://assets.clevelandclinic.org/transform/cd71f4bd-81d4-45d8-a450-74df78e4477a/Apples-184940975-770x533-1_jpg" alt="Apple">
+            <h3>Apple</h3>
+            <p>&#8377; 120.0 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://cdn-prod.medicalnewstoday.com/content/images/articles/272/272782/oranges-in-a-box.jpg" alt="Orange">
+            <h3>Orange</h3>
+            <p>&#8377; 60.0 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://rukminim2.flixcart.com/image/850/1000/kt0enww0/plant-seed/h/h/n/25-dg-214-paudha-original-imag6fgvre6bmd5y.jpeg?q=20&crop=false" alt="Grapes">
+            <h3>Grapes</h3>
+            <p>&#8377; 90.0 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://akulaorganics.in/wp-content/uploads/2022/08/sapota.webp" alt="Chikoo">
+            <h3>Chikoo</h3>
+            <p>&#8377; 70.0 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://images.immediate.co.uk/production/volatile/sites/30/2024/06/Pineapple-01-5562ee3.jpg?quality=90&resize=440,400" alt="Pineapple">
+            <h3>Pineapple</h3>
+            <p>&#8377; 60.0 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://creativefarmer.in/cdn/shop/products/61ibo_wuuPL._SL1024_fbf16ee5-464e-4689-a775-e15a669d7ec0.jpg?v=1646894160" alt="Custard Apple">
+            <h3>Custard Apple</h3>
+            <p>&#8377; 100.0 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="http://clv.h-cdn.co/assets/15/22/2048x2048/square-1432664914-strawberry-facts1.jpg" alt="Strawberry">
+            <h3>Strawberry</h3>
+            <p>&#8377; 150.0 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://organicmandya.com/cdn/shop/files/Watermelon_1.jpg?v=1731058569&width=1000" alt="Watermelon">
+            <h3>Watermelon</h3>
+            <p>&#8377; 40.0 / kg</p>
+            <button>Add to Cart</button>
+        </div>
+    </div>
+    <h2>Grains & Pulses</h2>
+    <div class="product-grid">
+        <div class="product"><img src="https://4.imimg.com/data4/JV/LU/MY-25077432/wheat-whole.jpg" alt="Wheat"><h3>Wheat</h3><p>&#8377; 50.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://5.imimg.com/data5/SELLER/Default/2023/7/322826204/BZ/MP/GJ/13537206/sona-masoori-raw-rice.jpg" alt="Rice"><h3>Rice</h3><p>&#8377; 60.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://5.imimg.com/data5/UM/AY/MY-49317808/raw-arhar-dal-500x500.jpg" alt="Arhar Dal"><h3>Arhar Dal</h3><p>&#8377; 90.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://5.imimg.com/data5/WM/XB/MY-5739295/sorghum-or-jwari-500x500.jpg" alt="Jowar"><h3>Jowar</h3><p>&#8377; 55.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://karthickorganics.com/wp-content/uploads/2023/11/bajra.webp" alt="Bajra"><h3>Bajra</h3><p>&#8377; 50.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="http://spicebasket.com/cdn/shop/products/black-chana-400g-275390.jpg?v=1688466702" alt="Black Chana"><h3>Black Chana</h3><p>&#8377; 70.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://img.clevup.in/333751/images30-1714971924890.jpeg?width=600&format=webp" alt="Peanuts"><h3>Peanuts</h3><p>&#8377; 80.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://5.imimg.com/data5/SELLER/Default/2024/2/385706119/EE/FI/LO/138701088/groundnut-oil-500x500.jpg" alt="Moong Dal"><h3>Moong Dal</h3><p>&#8377; 85.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Black_gram.jpg/800px-Black_gram.jpg" alt="Urad Dal"><h3>Urad Dal</h3><p>&#8377; 95.0 / kg</p><button>Add to Cart</button></div>
+        <div class="product"><img src="https://5.imimg.com/data5/SELLER/Default/2023/3/296942918/HR/CE/NN/124650666/massor-dal.jpg" alt="Masoor Dal"><h3>Masoor Dal</h3><p>&#8377; 90.0 / kg</p><button>Add to Cart</button></div>
+    </div>
+</section>
+<section class="order-section">
+    <h2>Complete Your Order</h2>
+    <div class="order-container">
+        <div class="customer-details">
+            <form id="order-form">
+                <div class="form-group">
+                    <label for="name">Full Name:</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="address">Delivery Address:</label>
+                    <textarea id="address" placeholder="Enter your full address" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="payment">Select Payment Method:</label>
+                    <div class="payment-options">
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="credit-card" checked>
+                            <label for="credit-card">Credit Card</label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="debit-card">
+                            <label for="debit-card">Debit Card</label>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="upi">
+                            <label for="upi">UPI</label>
+                            <div class="upi-details" style="display: none;">
+                                <label for="upi-id">Enter UPI ID:</label>
+                                <input type="text" id="upi-id" placeholder="yourupi@bank">
+                                <div class="upi-logos">
+                                    <img src="https://m.economictimes.com/thumb/msid-74960608,width-1600,height-900,resizemode-4,imgsize-49172/upi-twitter.jpg" alt="UPI Logo" width="50">
+                                    <img src="https://www.paymentscardsandmobile.com/wp-content/uploads/2023/12/Google-Pay-logo.png" alt="Google Pay" width="50">
+                                    <img src="https://static.india.com/wp-content/uploads/2023/07/PhonePe-Launches-New-Income-Tax-Payment-Feature-Where-How-To-Use.png" alt="PhonePe" width="50">
+                                    <img src="https://m.economictimes.com/thumb/msid-107312198,width-1200,height-1200,resizemode-4,imgsize-6574/paytm-etonline.jpg" alt="Paytm" width="50">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="payment-method">
+                            <input type="radio" name="payment" id="cod">
+                            <label for="cod">Cash on Delivery</label>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="order-status"></div>
+
+    <div id="tracking-section">
+        <h3>Track Your Order</h3>
+        <input type="text" id="tracking-id" placeholder="Enter tracking ID">
+        <button id="track-btn" class="btn">Track</button>
+        <p id="tracking-status"></p>
+    </div>
+
+    <footer>
+        <div class="contact-section">
+            <p>Contact: <a href="tel:9604192371">9604192371</a> |
+                Email: <a href="mailto:tanishqbharti@8269gmail.com">tanishqbharti@8269gmail.com</a>
+            </p>
+        </div>
+        <p>&copy; 2025 AgroMart. All rights reserved.</p>
+    </footer>
+</section>
+
+<script>
+    document.getElementById('upi').addEventListener('change', function() {
+        document.querySelector('.upi-details').style.display = 'block';
+    });
+
+    document.getElementById('order-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        document.getElementById('order-status').innerText = 'Your order has been placed successfully!';
+    });
+
+    document.getElementById('track-btn').addEventListener('click', function() {
+        let trackingId = document.getElementById('tracking-id').value;
+        if (trackingId) {
+            document.getElementById('tracking-status').innerText = 'Tracking details for ID: ' + trackingId;
+        } else {
+            alert('Please enter a tracking ID.');
+        }
+    });
+</script>
+
+<style>
+    .order-section {
+        max-width: 600px;
+        margin: 40px auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-group {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 15px;
+    }
+    .payment-options {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 10px;
+    }
+    .payment-method {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: #f8f8f8;
+        padding: 10px;
+        border-radius: 5px;
+        width: 100%;
+    }
+    .upi-details {
+        margin-top: 10px;
+        padding-left: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    .btn {
+        background-color: #28a745;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .btn:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+    }
+    .contact-section {
+        background-color: #28a745;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+</style>

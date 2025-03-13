@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "533424895037",
+    "project_id": "agro-product-demo-1",
+    "storage_bucket": "agro-product-demo-1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533424895037:android:b4943ab618049ed99fe654",
+        "android_client_info": {
+          "package_name": "pccoe.pune.agroproduct"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEoNMuzeJIuK1vo6YjI-Kf_GGuoydc700"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
